@@ -24,8 +24,6 @@ rule:
 		"../data/original/drugLibTrain_raw.tsv"
 	output:
 		"../data/derived/intermediate/word_rankings_{condition}.csv"
-	conda:
-		"./snake_env.yml"
 	shell:
 		"Rscript 1_find_side_effects.R {wildcards.condition}"
 
@@ -37,8 +35,6 @@ rule:
 	output:
 		"../results/wordcloud_{condition}.png",
 		"../results/bigramcloud_{condition}.png"
-	conda:
-		"./snake_env.yml"
 	shell:
 		"Rscript 2_plot_wordcloud.R {wildcards.condition}"
 
