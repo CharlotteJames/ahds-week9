@@ -22,7 +22,7 @@ Before week 9, you need to:
 5. Fork this repository, and clone the fork to your `$WORK` partition on BluePebble using git
 6. Run the `installConda.sh` script in the `/code/setup/` directory to install conda on BluePebble
 
-Instructions to do these steps can be found in the homework from week 8. There will also be a drop-in session before week 9 teaching (9:30am - 10am) where we will help you complete this setup.
+Instructions to do these steps can be found in the [homework from week 8](https://github.com/MRCIEU/conda-hpc-snakemake-example/blob/main/week_8_homework.md). There will also be a drop-in session before week 9 teaching (9:30am - 10am) where we will help you complete this setup.
 
 
 
@@ -69,8 +69,8 @@ You will now re-run the analysis using Snakemake. First, navigate to the root di
 
 ### Adapt the bash pipeline to work with snakemake
 
-Look at `practical_2/Snakefile`: this is a snakemake workflow for the analysis.
-1. Compare this to the commands in `run_analysis.sh`. What commands aren't executed by the Snakefile?
+Look at `code/Snakefile`: this is a snakemake workflow for the analysis.
+1. Compare this to the commands in `code/practical_1/run_analysis.sh`. What commands aren't executed by the Snakefile?
 2. Execute snakemake with a dry run (`snakemake -n`) -- what error(s) do you see?
 3. Look at `make_config.sh`: which parts of the pipeline are missing? Complete and execute.
 4. Run snakemake with a dry run again -- the errors should have gone. 
@@ -78,9 +78,9 @@ Look at `practical_2/Snakefile`: this is a snakemake workflow for the analysis.
 
 ### Run your workflow using a slurm profile
 
-1. Create a Snakemake slurm profile and save this in your config directory: `~./config/snakemake/slurm_profile/config.yaml`. You can find a template in the root directory of the repository.
+1. Create a Snakemake slurm profile and save this in your code directory. You can find a template in the root directory of the repository (`config.yaml`).
 2. Clean your Snakemake workflow (`snakemake clean`)
-3. Run your workflow using your profile, timing it: `time snakemake --executor slurm --profile slurm_profile` 
+3. Run your workflow using your profile, timing it: `time snakemake --profile .` 
 
 ## Things to consider
 
